@@ -1,0 +1,25 @@
+package com.nova.backend.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+/**
+ * 密码加密器配置类
+ *
+ * @author Nova
+ */
+@Configuration
+public class PasswordEncoderConfig {
+
+    /**
+     * 配置密码加密器
+     *
+     * @return BCrypt密码加密器
+     */
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}

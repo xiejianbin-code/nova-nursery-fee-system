@@ -1,0 +1,325 @@
+@import './variables.scss';
+
+// 重置样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: $font-size-base;
+  color: $text-primary;
+  background-color: $bg-color-page;
+  line-height: $line-height-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-color-page;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-color-base;
+  border-radius: 3px;
+  transition: background $transition-duration;
+
+  &:hover {
+    background: $text-secondary;
+  }
+}
+
+// 链接样式
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: color $transition-duration-fast;
+
+  &:hover {
+    color: $primary-light;
+  }
+
+  &:active {
+    color: $primary-dark;
+  }
+}
+
+// 文字选中样式
+::selection {
+  background-color: rgba($primary-color, 0.2);
+  color: $primary-dark;
+}
+
+// 清除浮动
+.clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 文字省略
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ellipsis-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Flex布局工具类
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+// 文字对齐
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+// 文字颜色
+.text-primary {
+  color: $primary-color;
+}
+
+.text-success {
+  color: $success-color;
+}
+
+.text-warning {
+  color: $warning-color;
+}
+
+.text-danger {
+  color: $danger-color;
+}
+
+.text-info {
+  color: $info-color;
+}
+
+// 背景颜色
+.bg-primary {
+  background-color: $primary-color;
+}
+
+.bg-success {
+  background-color: $success-color;
+}
+
+.bg-warning {
+  background-color: $warning-color;
+}
+
+.bg-danger {
+  background-color: $danger-color;
+}
+
+.bg-info {
+  background-color: $info-color;
+}
+
+// 间距工具类
+@for $i from 0 through 10 {
+  .mt-#{$i * 4} {
+    margin-top: #{$i * 4}px;
+  }
+  .mb-#{$i * 4} {
+    margin-bottom: #{$i * 4}px;
+  }
+  .ml-#{$i * 4} {
+    margin-left: #{$i * 4}px;
+  }
+  .mr-#{$i * 4} {
+    margin-right: #{$i * 4}px;
+  }
+  .pt-#{$i * 4} {
+    padding-top: #{$i * 4}px;
+  }
+  .pb-#{$i * 4} {
+    padding-bottom: #{$i * 4}px;
+  }
+  .pl-#{$i * 4} {
+    padding-left: #{$i * 4}px;
+  }
+  .pr-#{$i * 4} {
+    padding-right: #{$i * 4}px;
+  }
+}
+
+// 卡片样式
+.card {
+  background: $bg-color;
+  border-radius: $border-radius-base;
+  box-shadow: $box-shadow-light;
+  padding: $spacing-md;
+}
+
+// 页面容器
+.page-container {
+  padding: $spacing-md;
+  min-height: 100%;
+}
+
+// 表格页面通用样式
+.table-page {
+  .search-area {
+    margin-bottom: $spacing-md;
+    padding: $spacing-md;
+    background: $bg-color;
+    border-radius: $border-radius-base;
+  }
+
+  .table-area {
+    background: $bg-color;
+    border-radius: $border-radius-base;
+    padding: $spacing-md;
+  }
+
+  .pagination-area {
+    margin-top: $spacing-md;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+// Element Plus 样式覆盖
+.el-button {
+  font-weight: 400;
+}
+
+.el-dialog {
+  border-radius: $border-radius-large;
+}
+
+.el-message-box {
+  border-radius: $border-radius-large;
+}
+
+// 动画
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity $transition-duration;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all $transition-duration ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all $transition-duration cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}

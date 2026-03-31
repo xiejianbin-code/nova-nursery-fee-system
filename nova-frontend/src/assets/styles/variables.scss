@@ -1,0 +1,92 @@
+// 主色调
+$primary-color: #409EFF;
+$primary-light: #66b1ff;
+$primary-dark: #337ecc;
+
+// 成功色
+$success-color: #67C23A;
+$success-light: #95d475;
+$success-dark: #529b2e;
+
+// 警告色
+$warning-color: #E6A23C;
+$warning-light: #eebe77;
+$warning-dark: #c48a1a;
+
+// 危险色
+$danger-color: #F56C6C;
+$danger-light: #f89898;
+$danger-dark: #c45656;
+
+// 信息色
+$info-color: #909399;
+$info-light: #b1b3b8;
+$info-dark: #73767a;
+
+// 文字颜色
+$text-primary: #303133;
+$text-regular: #606266;
+$text-secondary: #909399;
+$text-placeholder: #C0C4CC;
+
+// 边框颜色
+$border-color-base: #DCDFE6;
+$border-color-light: #E4E7ED;
+$border-color-lighter: #EBEEF5;
+$border-color-extra-light: #F2F6FC;
+
+// 背景颜色
+$bg-color: #FFFFFF;
+$bg-color-page: #F2F3F5;
+$bg-color-overlay: rgba(0, 0, 0, 0.5);
+
+// 阴影
+$box-shadow-base: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-light: 0 2px 8px 0 rgba(0, 0, 0, 0.06);
+$box-shadow-dark: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+
+// 圆角
+$border-radius-base: 4px;
+$border-radius-small: 2px;
+$border-radius-large: 8px;
+$border-radius-round: 20px;
+
+// 字体大小
+$font-size-extra-small: 12px;
+$font-size-small: 13px;
+$font-size-base: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-extra-large: 20px;
+
+// 行高
+$line-height-base: 1.5;
+$line-height-small: 1.25;
+$line-height-large: 1.75;
+
+// 间距
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// 过渡时间
+$transition-duration: 0.3s;
+$transition-duration-fast: 0.15s;
+
+// 层级
+$z-index-dropdown: 1000;
+$z-index-modal: 2000;
+$z-index-tooltip: 3000;
+$z-index-message: 4000;
+
+// 侧边栏宽度
+$sidebar-width: 210px;
+$sidebar-collapsed-width: 64px;
+
+// 导航栏高度
+$navbar-height: 50px;
+
+// 标签页高度
+$tagsview-height: 34px;
