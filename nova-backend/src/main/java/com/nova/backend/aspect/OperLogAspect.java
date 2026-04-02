@@ -48,15 +48,29 @@ public class OperLogAspect {
 
     @AfterReturning(pointcut = "operLogPointcut()", returning = "result")
     public void doAfterReturning(JoinPoint joinPoint, Object result) {
-        handleLog(joinPoint, null, result);
+        long startTime = System.currentTimeMillis();
+        try {
+            handleLog(joinPoint, null, result, startTime);
+        } finally {
+            long endTime = System.currentTimeMillis();
+            long costTime = endTime - startTime;
+            log.debug("接口耗时: {}ms", costTime);
+        }
     }
 
     @AfterThrowing(pointcut = "operLogPointcut()", throwing = "e")
     public void doAfterThrowing(JoinPoint joinPoint, Exception e) {
-        handleLog(joinPoint, e, null);
+        long startTime = System.currentTimeMillis();
+        try {
+            handleLog(joinPoint, e, null, startTime);
+        } finally {
+            long endTime = System.currentTimeMillis();
+            long costTime = endTime - startTime;
+            log.debug("接口耗时: {}ms", costTime);
+        }
     }
 
-    private void handleLog(JoinPoint joinPoint, Exception e, Object result) {
+    private void handleLog(JoinPoint joinPoint, Exception e, Object result, long startTime) {
         try {
             MethodSignature signature = (MethodSignature) joinPoint.getSignature();
             Method method = signature.getMethod();
@@ -79,6 +93,11 @@ public class OperLogAspect {
             operationLog.setRequestMethod(request.getMethod());
             operationLog.setRequestUrl(request.getRequestURI());
             operationLog.setCreateTime(LocalDateTime.now());
+            
+            // 计算耗时
+            long endTime = System.currentTimeMillis();
+            long costTime = endTime - startTime;
+            operationLog.setCostTime(costTime);
 
             User currentUser = userService.getCurrentUser();
             if (currentUser != null) {
