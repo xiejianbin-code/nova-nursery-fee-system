@@ -8,9 +8,9 @@ spring:
     name: nova-backend
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://8.138.84.114:3306/nova_nursery?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-    username: nova_nursery
-    password: fxaTiFNYXtkbetxj
+    url: jdbc:mysql://XXXXX:3306/nova_nursery?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    username: XXXX
+    password: XXXXXX
     hikari:
       minimum-idle: 5
       maximum-pool-size: 20
